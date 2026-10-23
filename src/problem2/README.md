@@ -2,6 +2,8 @@
 
 A token swap form built with **Vite + React 19 + TypeScript (strict)**. It has no UI library: the components and CSS are hand-written.
 
+**Live demo:** https://hiephunbie93.github.io/fe-code-challenge/
+
 ![Swap form](docs/screenshot.png)
 
 ```bash

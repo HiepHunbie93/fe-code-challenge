@@ -1,5 +1,7 @@
 # 99Tech Code Challenge: Frontend (Problems 1–3)
 
+**Live demo (Problem 2):** https://hiephunbie93.github.io/fe-code-challenge/
+
 | | Problem | Solution | Highlights |
 | --- | --- | --- | --- |
 | 1 | Three ways to sum to n | [`src/problem1`](src/problem1) | O(1) formula, a loop, and divide-and-conquer recursion that is safe for large n. Assumption for n ≤ 0 is documented. |
