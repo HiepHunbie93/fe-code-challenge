@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  problem1:
+    name: Problem 1 · sum to n
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node --test src/problem1/index.test.js
+
+  problem2:
+    name: Problem 2 · Fancy Form
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: src/problem2
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: src/problem2/package-lock.json
+      - run: npm ci
+      - run: npm run format:check
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build
+
+  problem3:
+    name: Problem 3 · Messy React
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: src/problem3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: src/problem3/package-lock.json
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
